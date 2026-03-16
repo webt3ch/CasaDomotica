@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Domotica - Cancello</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Casa Domotica</p>
+        <h1>Modulo Cancello</h1>
+      </div>
+
+      <div class="topbar-right">
+        <span id="online-badge" class="badge online">Online</span>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="hero-card closed" id="gate-card">
+        <div class="hero-header">
+          <div>
+            <p class="section-label">Controllo accessi</p>
+            <h2>Cancello principale</h2>
+          </div>
+
+          <div class="signal-dot" id="signal-dot"></div>
+        </div>
+
+        <div class="gate-visual">
+          <div class="gate-icon-wrap" id="open-wrap">
+            <span class="gate-icon">🔓</span>
+            <p>Aperto</p>
+          </div>
+
+          <div class="gate-divider"></div>
+
+          <div class="gate-icon-wrap active" id="close-wrap">
+            <span class="gate-icon">🔒</span>
+            <p>Chiuso</p>
+          </div>
+        </div>
+
+        <div class="hero-status-row">
+          <div>
+            <p class="mini-label">Stato attuale</p>
+            <p class="main-status" id="gate-status">CHIUSO</p>
+          </div>
+
+          <div class="pulse-box">
+            <span class="pulse"></span>
+            <span id="live-text">Sincronizzato</span>
+          </div>
+        </div>
+
+        <div class="lock-control">
+          <input id="inpLock" type="checkbox">
+          <label class="btn-lock" for="inpLock" aria-label="Controllo cancello">
+            <svg width="36" height="40" viewBox="0 0 36 40">
+              <path class="lockb" d="M27 27C27 34.1797 21.1797 40 14 40C6.8203 40 1 34.1797 1 27C1 19.8203 6.8203 14 14 14C21.1797 14 27 19.8203 27 27ZM15.6298 26.5191C16.4544 25.9845 17 25.056 17 24C17 22.3431 15.6569 21 14 21C12.3431 21 11 22.3431 11 24C11 25.056 11.5456 25.9845 12.3702 26.5191L11 32H17L15.6298 26.5191Z"></path>
+              <path class="lock" d="M6 21V10C6 5.58172 9.58172 2 14 2V2C18.4183 2 22 5.58172 22 10V21"></path>
+              <path class="bling" d="M29 20L31 22"></path>
+              <path class="bling" d="M31.5 15H34.5"></path>
+              <path class="bling" d="M29 10L31 8"></path>
+            </svg>
+          </label>
+        </div>
+
+        <p class="lock-hint" id="lock-hint">Premi per aprire il cancello</p>
+      </section>
+
+      <section class="info-grid">
+        <article class="info-card">
+          <div class="card-top">
+            <p class="card-label">Ultimo UID</p>
+            <span class="card-icon">🪪</span>
+          </div>
+          <p class="card-value uid-value" id="ultimo-uid">-</p>
+        </article>
+
+        <article class="info-card">
+          <div class="card-top">
+            <p class="card-label">Ultimo accesso</p>
+            <span class="card-icon">📋</span>
+          </div>
+          <p class="card-text" id="ultimo-accesso">Nessun evento</p>
+        </article>
+
+        <article class="info-card">
+          <div class="card-top">
+            <p class="card-label">Origine</p>
+            <span class="card-icon">📡</span>
+          </div>
+          <p class="card-value" id="ultima-origine">WEB</p>
+        </article>
+
+        <article class="info-card">
+          <div class="card-top">
+            <p class="card-label">Stato modulo</p>
+            <span class="card-icon">🛡️</span>
+          </div>
+          <p class="card-value" id="modulo-status">Operativo</p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
